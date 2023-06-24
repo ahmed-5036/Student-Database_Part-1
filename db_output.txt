@@ -1,0 +1,129 @@
+students=> \d ;
+students=>                       List of relations
++--------+-------------------------+----------+--------------+
+| Schema |          Name           |   Type   |    Owner     |
++--------+-------------------------+----------+--------------+
+| public | courses                 | table    | freecodecamp |
+| public | courses_course_id_seq   | sequence | freecodecamp |
+| public | majors                  | table    | freecodecamp |
+| public | majors_courses          | table    | freecodecamp |
+| public | majors_major_id_seq     | sequence | freecodecamp |
+| public | students                | table    | freecodecamp |
+| public | students_student_id_seq | sequence | freecodecamp |
++--------+-------------------------+----------+--------------+
+(7 rows)
+
+SELECT * FROM majors;
+students=>                    
++----------+-------------------------+
+| major_id |          major          |
++----------+-------------------------+
+|       43 | Database Administration |
+|       44 | Web Development         |
+|       45 | Data Science            |
+|       46 | Network Engineering     |
+|       47 | Computer Programming    |
+|       48 | Game Design             |
+|       49 | System Administration   |
++----------+-------------------------+
+(7 rows)
+
+SELECT * FROM courses;
+                       
++-----------+--------------------------------+
+| course_id |             course             |
++-----------+--------------------------------+
+|        40 | Data Structures and Algorithms |
+|        41 | Web Programming                |
+|        42 | Database Systems               |
+|        43 | Computer Networks              |
+|        44 | SQL                            |
+|        45 | Machine Learning               |
+|        46 | Computer Systems               |
+|        47 | Web Applications               |
+|        48 | Artificial Intelligence        |
+|        49 | Python                         |
+|        50 | Object-Oriented Programming    |
+|        51 | Calculus                       |
+|        52 | Game Architecture              |
+|        53 | Algorithms                     |
+|        54 | UNIX                           |
+|        55 | Server Administration          |
+|        56 | Network Security               |
++-----------+--------------------------------+
+(17 rows)
+
+students=> SELECT * FROM majors_courses;
+students=>             
++----------+-----------+
+| major_id | course_id |
++----------+-----------+
+|       43 |        40 |
+|       44 |        41 |
+|       43 |        42 |
+|       45 |        40 |
+|       46 |        43 |
+|       43 |        44 |
+|       45 |        45 |
+|       46 |        46 |
+|       47 |        43 |
+|       43 |        47 |
+|       48 |        48 |
+|       45 |        49 |
+|       47 |        50 |
+|       49 |        46 |
+|       48 |        51 |
+|       44 |        40 |
+|       45 |        51 |
+|       44 |        50 |
+|       48 |        52 |
+|       49 |        43 |
+|       48 |        53 |
+|       49 |        54 |
+|       49 |        55 |
+|       47 |        46 |
+|       47 |        49 |
+|       46 |        56 |
+|       44 |        47 |
+|       46 |        53 |
++----------+-----------+
+(28 rows)
+
+SELECT * FROM students;
+students=>                               
++------------+------------+--------------+----------+-----+
+| student_id | first_name |  last_name   | major_id | gpa |
++------------+------------+--------------+----------+-----+
+|         37 | Rhea       | Kellems      |       43 | 2.5 |
+|         38 | Emma       | Gilbert      |          |     |
+|         39 | Kimberly   | Whitley      |       44 | 3.8 |
+|         40 | Jimmy      | Felipe       |       43 | 3.7 |
+|         41 | Kyle       | Stimson      |          | 2.8 |
+|         42 | Casares    | Hijo         |       48 | 4.0 |
+|         43 | Noe        | Savage       |          | 3.6 |
+|         44 | Sterling   | Boss         |       48 | 3.9 |
+|         45 | Brian      | Davis        |          | 2.3 |
+|         46 | Kaija      | Uronen       |       48 | 3.7 |
+|         47 | Faye       | Conn         |       48 | 2.1 |
+|         48 | Efren      | Reilly       |       44 | 3.9 |
+|         49 | Danh       | Nhung        |          | 2.4 |
+|         50 | Maxine     | Hagenes      |       43 | 2.9 |
+|         51 | Larry      | Saunders     |       45 | 2.2 |
+|         52 | Karl       | Kuhar        |       44 |     |
+|         53 | Lieke      | Hazenveld    |       48 | 3.5 |
+|         54 | Obie       | Hilpert      |       44 |     |
+|         55 | Peter      | Booysen      |          | 2.9 |
+|         56 | Nathan     | Turner       |       43 | 3.3 |
+|         57 | Gerald     | Osiki        |       45 | 2.2 |
+|         58 | Vanya      | Hassanah     |       48 | 4.0 |
+|         59 | Roxelana   | Florescu     |       43 | 3.2 |
+|         60 | Helene     | Parker       |       45 | 3.4 |
+|         61 | Mariana    | Russel       |       44 | 1.8 |
+|         62 | Ajit       | Dhungel      |          | 3.0 |
+|         63 | Mehdi      | Vandenberghe |       43 | 1.9 |
+|         64 | Dejon      | Howell       |       44 | 4.0 |
+|         65 | Aliya      | Gulgowski    |       49 | 2.6 |
+|         66 | Ana        | Tupajic      |       45 | 3.1 |
+|         67 | Hugo       | Duran        |          | 3.8 |
++------------+------------+--------------+----------+-----+
+(31 rows)
