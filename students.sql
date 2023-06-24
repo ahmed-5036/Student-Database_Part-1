@@ -368,4 +368,3 @@ ALTER TABLE ONLY public.students
 --
 -- PostgreSQL database dump complete
 --
-
